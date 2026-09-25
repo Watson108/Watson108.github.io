@@ -1,0 +1,61 @@
+# Shiro theme configuration
+# https://github.com/Acris/hexo-theme-shiro
+
+site:
+  favicon: /favicon.svg
+  since: 2022
+  seal: true
+  seal_text: "W"
+  rss:
+    enabled: false
+    path: /atom.xml
+
+menu:
+  - name: 首页
+    url: /
+  - name: 归档
+    url: /archives
+  - name: GitHub
+    url: https://github.com/Watson108
+    target: _blank
+
+excerpt:
+  fallback:
+    enabled: true
+    length: 200
+
+toc:
+  enabled: true
+  depth: 3
+  min_headings: 3
+
+lightGallery:
+  enabled: false
+
+mathjax:
+  enabled: false
+  every_page: false
+
+dark_mode:
+  default: system
+  toggle: true
+
+progress_bar:
+  enabled: true
+
+word_count:
+  enabled: false
+
+back_to_top:
+  enabled: true
+
+comments:
+  enabled: false
+
+analytics:
+  google:
+    enabled: false
+    id: ""
+
+search:
+  enabled: false
