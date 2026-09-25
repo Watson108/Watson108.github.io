@@ -13,6 +13,11 @@
     
 
 
+<link rel="prefetch" as="style" href="/css/search.min.css?v=c845a359" />
+
+<link rel="prefetch" as="style" href="/pagefind/pagefind-component-ui.css" />
+<link rel="prefetch" as="script" href="/pagefind/pagefind-component-ui.js" />
+
 
     
     
@@ -32,7 +37,7 @@
     html.setAttribute('data-theme-state', state);
     const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
     // Pagefind dark contract only when search is enabled.
-    const syncPagefindTheme = false;
+    const syncPagefindTheme = true;
     shiro.searchEnabled = syncPagefindTheme;
     // Single source for theme-toggle.js and system-follow listener.
     const applyResolvedTheme = (dark) => {
@@ -245,6 +250,16 @@
 
                 </button>
                 
+                
+                
+                <button id="searchToggle" type="button" class="focus-elegant header-pill-btn" aria-haspopup="dialog" aria-expanded="false" aria-label="搜索" disabled>
+                    
+<svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="7"></circle>
+    <path d="M21 21l-4.35-4.35"></path>
+</svg>
+
+                </button>
                 
             </div>
             
@@ -475,10 +490,41 @@
 
     
     
+    
+    <div class="shiro-search-components" data-pagefind-ignore>
+        <pagefind-config bundle-path="/pagefind/" base-url="/" lang="zh"></pagefind-config>
+        <pagefind-modal reset-on-close>
+            <pagefind-modal-header>
+                <pagefind-input placeholder="搜索文章…"></pagefind-input>
+            </pagefind-modal-header>
+            <pagefind-modal-body>
+                <pagefind-summary></pagefind-summary>
+                <pagefind-results></pagefind-results>
+            </pagefind-modal-body>
+            <pagefind-modal-footer>
+                <pagefind-keyboard-hints></pagefind-keyboard-hints>
+            </pagefind-modal-footer>
+        </pagefind-modal>
+    </div>
+    
 
     <!-- Scripts -->
     
     
+    <script>
+        
+        
+        (window.__shiro = window.__shiro || {})["pagefindBase"] = "/pagefind/";
+        (window.__shiro = window.__shiro || {})["searchCss"] = "/css/search.min.css?v=c845a359";
+        
+        
+        
+    </script>
+    
+    
+    <script defer src="/js/runtime.min.js?v=71138c68"></script>
+    
+    <script defer src="/js/search-bootstrap.min.js?v=e6ff1f0d"></script>
     
     <script defer src="/js/progress.min.js?v=d01e3a23"></script>
     
